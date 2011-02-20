@@ -1,0 +1,29 @@
+<article>
+	<h1>Listing employees</h1>
+
+	<table class="datalist">
+		<thead>
+		  <tr>
+		    <th>Name</th>
+		    <th>Phone Number</th>
+		    <th></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+		<% @employees.each do |employee| %>
+	  	<tr>
+	    	<td><%= employee.first_name %></td>
+	    	<td><%= employee.phone1 %></td>
+	    	<td>
+					<%= link_to 'S', employee %>,
+					<%= link_to 'E', edit_employee_path(employee) %>,
+					<%= link_to 'D', employee, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+		  </tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Employee', new_employee_path %>
+</article>

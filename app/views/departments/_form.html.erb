@@ -1,0 +1,26 @@
+<%= form_for(@department) do |f| %>
+  <% if @department.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@department.errors.count, "error") %> prohibited this department from being saved:</h2>
+
+      <ul>
+      <% @department.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Department Details</legend>	
+		
+		<dl>
+    	<dt><%= f.label :name %></dt>
+    	<dd><%= f.text_field :name %></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+    <%= f.submit %>
+	</fieldset>
+<% end %>

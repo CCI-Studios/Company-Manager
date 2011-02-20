@@ -1,0 +1,22 @@
+<article>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <b>Name:</b>
+	  <%= @campaign_type.name %>
+	</p>
+
+	<p>
+	  <b>Prefix:</b>
+	  <%= @campaign_type.prefix %>
+	</p>
+
+	<p>
+	  <b>Suffix:</b>
+	  <%= @campaign_type.suffix %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_campaign_type_path(@campaign_type) %> |
+	<%= link_to 'Back', campaign_types_path %>
+</article>

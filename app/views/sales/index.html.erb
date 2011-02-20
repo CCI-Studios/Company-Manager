@@ -1,0 +1,30 @@
+<article>
+	<h1>Listing sales</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Close date</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		<% @sales.each do |sale| %>
+			<tr>
+				<td><%= sale.name %></td>
+				<td><%= sale.amount %></td>
+				<td><%= sale.close_date %></td>
+				<td>
+					<%= link_to 'S', sale %>,
+					<%= link_to 'E', edit_sale_path(sale) %>,
+				<%= link_to 'D', sale, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+</table>
+
+<%= link_to 'New Sale', new_sale_path %>
+</article>

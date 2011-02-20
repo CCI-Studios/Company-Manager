@@ -1,0 +1,29 @@
+<article>
+	<h1>Listing schedule_blocks</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Order</th>
+				<th>Description</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		<% @schedule_blocks.each do |schedule_block| %>
+			<tr>
+				<td><%= schedule_block.order %></td>
+				<td><%= schedule_block.description %></td>
+				<td>
+					<%= link_to 'S', schedule_block %>,
+					<%= link_to 'E', edit_schedule_block_path(schedule_block) %>,
+					<%= link_to 'D', schedule_block, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Schedule block', new_schedule_block_path %>
+</article>

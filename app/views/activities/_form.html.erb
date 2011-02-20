@@ -1,0 +1,48 @@
+<%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Activity Details</legend>
+		
+		<dl>
+			<dt><%= f.label :name %></dt>
+    	<dd><%= f.text_field :name %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :description %></dt>
+    	<dd><%= f.text_area :description %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :due_date %></dt>
+    	<dd><%= f.date_select :due_date %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :start_date %></dt>
+    	<dd><%= f.date_select :start_date %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :completion_date %></dt>
+    	<dd><%= f.date_select :completion_date %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :order %></dt>
+    	<dd><%= f.text_field :order %></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	</fieldset>
+<% end %>

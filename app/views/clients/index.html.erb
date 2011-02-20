@@ -1,0 +1,31 @@
+<article>
+	<h1>Listing clients</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Phone Number</th>
+				<th>Manager</th>
+		    <th></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+		<% @clients.each do |client| %>
+			<tr>
+				<td><%= client.first_name %></td>
+				<td><%= client.phone1 %></td>
+				<td>&nbsp;</td>
+				<td>
+					<%= link_to 'S', client %>,
+					<%= link_to 'E', edit_client_path(client) %>,
+					<%= link_to 'D', client, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Client', new_client_path %>
+</article>

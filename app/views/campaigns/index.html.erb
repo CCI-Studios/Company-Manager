@@ -1,0 +1,33 @@
+<article>
+	<h1>Listing campaigns</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Start date</th>
+				<th>End date</th>
+				<th>Goal</th>
+				<th></th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		<% @campaigns.each do |campaign| %>
+			<tr>
+				<td><%= campaign.name %></td>
+				<td><%= campaign.start_date %></td>
+				<td><%= campaign.end_date %></td>
+				<td><%= campaign.goal %></td>
+				<td>
+					<%= link_to 'S', campaign %>,
+					<%= link_to 'E', edit_campaign_path(campaign) %>,
+					<%= link_to 'D', campaign, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Campaign', new_campaign_path %>
+</article>

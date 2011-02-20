@@ -1,0 +1,27 @@
+<article>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <b>User name:</b>
+	  <%= @user.user_name %>
+	</p>
+
+	<p>
+	  <b>Password hash:</b>
+	  <%= @user.password_hash %>
+	</p>
+
+	<p>
+	  <b>Last signin:</b>
+	  <%= @user.last_signin %>
+	</p>
+
+	<p>
+	  <b>Last ip:</b>
+	  <%= @user.last_ip %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</article>

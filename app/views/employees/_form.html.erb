@@ -1,0 +1,98 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Employee Information</legend>
+		<dl>
+	    <dt><%= f.label :first_name %></dt>
+	    <dd><%= f.text_field :first_name %></dd>
+		</dl>
+		<dl>
+			<dt><%= f.label :lastname %></dt>
+	    <dd><%= f.text_field :last_name %></dd>
+		</dl>
+	  <dl>
+			<dt><%= f.label :title %></dt>
+	    <dd><%= f.text_field :title %></dd>
+		</dl>
+	</fieldset>
+  
+	<fieldset>
+		<legend>Contact Information</legend>
+		
+		<dl>
+			<dt><%= f.label :phone1 %></dt>
+	    <dd><%= f.text_field :phone1 %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :extension1 %></dt>
+	    <dd><%= f.text_field :extension1 %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :phone2 %></dt>
+	    <dd><%= f.text_field :phone2 %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :extension2 %></dt>
+	    <dd><%= f.text_field :extension2 %></dd>
+	  </dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>Address</legend>
+		
+	  <dl>
+			<dt><%= f.label :address1 %></dt>
+	    <dd><%= f.text_field :address1 %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :address2 %></dt>
+	    <dd><%= f.text_field :address2 %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :city %></dt>
+	    <dd><%= f.text_field :city %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :province %></dt>
+	    <dd><%= f.text_field :province %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :country %></dt>
+	    <dd><%= f.text_field :country %></dd>
+		</dl>
+		<dl>
+			<dt><%= f.label :postal_code %></dt>
+	    <dd><%= f.text_field :postal_code %></dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>Employment Details</legend>
+		
+	  <dl>
+			<dt><%= f.label :start_date %></dt>
+	    <dd><%= f.date_select :start_date %></dd>
+	  </dl>
+	  <dl>
+			<dt><%= f.label :end_date %></dt>
+	    <dd><%= f.date_select :end_date %></dd>
+	  </dl>
+	</fieldset>
+
+	<fieldset>
+		<div class="actions">
+	    <%= f.submit %>
+	  </div>
+	</fieldset>
+<% end %>

@@ -1,0 +1,29 @@
+<article>
+	<h1>Listing todos</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		<% @todos.each do |todo| %>
+			<tr>
+				<td><%= todo.name %></td>
+				<td><%= todo.description %></td>
+				<td>
+					<%= link_to 'S', todo %>,
+					<%= link_to 'E', edit_todo_path(todo) %>,
+					<%= link_to 'D', todo, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Todo', new_todo_path %>
+</article>

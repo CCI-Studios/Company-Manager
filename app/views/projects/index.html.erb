@@ -1,0 +1,35 @@
+<article>
+	<h1>Listing projects</h1>
+
+	<table class="datalist">
+		<thead>
+		  <tr>
+		    <th>Name</th>
+		    <th>Due date</th>
+		    <th>Start date</th>
+		    <th>Completion date</th>
+		    <th>Status</th>
+		    <th></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+		<% @projects.each do |project| %>
+			<tr>
+				<td><%= project.name %></td>
+				<td><%= project.due_date %></td>
+				<td><%= project.start_date %></td>
+				<td><%= project.completion_date %></td>
+				<td><%= project.status %></td>
+				<td>
+					<%= link_to 'S', project %>,
+					<%= link_to 'E', edit_project_path(project) %>,
+					<%= link_to 'D', project, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Project', new_project_path %>
+</article>

@@ -1,0 +1,27 @@
+<article>
+	<h1>Listing departments</h1>
+
+	<table class="datalist">
+		<thead>
+		  <tr>
+		    <th>Name</th>
+		    <th></th>
+		  </tr>
+		</thead>
+
+		<tbody>
+		<% @departments.each do |department| %>
+		  <tr>
+		    <td><%= department.name %></td>
+		    <td>
+					<%= link_to 'S', department %>,
+					<%= link_to 'E', edit_department_path(department) %>,
+					<%= link_to 'D', department, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+		  </tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Department', new_department_path %>
+</article>

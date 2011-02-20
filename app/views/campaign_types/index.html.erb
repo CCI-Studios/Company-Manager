@@ -1,0 +1,31 @@
+<article>
+	<h1>Listing campaign_types</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Prefix</th>
+				<th>Suffix</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		<% @campaign_types.each do |campaign_type| %>
+			<tr>
+				<td><%= campaign_type.name %></td>
+				<td><%= campaign_type.prefix %></td>
+				<td><%= campaign_type.suffix %></td>
+				<td><%= link_to 'Show', campaign_type %></td>
+				<td><%= link_to 'Edit', edit_campaign_type_path(campaign_type) %></td>
+				<td><%= link_to 'Destroy', campaign_type, :confirm => 'Are you sure?', :method => :delete %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<%= link_to 'New Campaign type', new_campaign_type_path %>
+</article>

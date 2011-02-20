@@ -1,0 +1,39 @@
+<article>
+	<h1>Listing activities</h1>
+
+	<table class="datalist">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Due date</th>
+				<th>Start date</th>
+				<th>Completion date</th>
+				<th>Order</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		<% @activities.each do |activity| %>
+			<tr>
+				<td><%= activity.name %></td>
+				<td><%= activity.description %></td>
+				<td><%= activity.due_date %></td>
+				<td><%= activity.start_date %></td>
+				<td><%= activity.completion_date %></td>
+				<td><%= activity.order %></td>
+				<td>
+					<%= link_to 'S', activity %>,
+					<%= link_to 'E', edit_activity_path(activity) %>,
+					<%= link_to 'D', activity, :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+	<br />
+
+	<%= link_to 'New Activity', new_activity_path %>
+</article>

@@ -1,0 +1,36 @@
+<%= form_for(@campaign_type) do |f| %>
+  <% if @campaign_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign_type.errors.count, "error") %> prohibited this campaign_type from being saved:</h2>
+
+      <ul>
+      <% @campaign_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Type Details</legend>
+		
+		<dl>
+			<dt><%= f.label :name %></dt>
+			<dd><%= f.text_field :name %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :prefix %></dt>
+    	<dd><%= f.text_field :prefix %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :suffix %></dt>
+    	<dd><%= f.text_field :suffix %></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	</fieldset>
+<% end %>

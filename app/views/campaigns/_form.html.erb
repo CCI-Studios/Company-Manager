@@ -1,0 +1,44 @@
+<%= form_for(@campaign) do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
+
+      <ul>
+      <% @campaign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Campaign Details</legend>
+		
+		<dl>
+			<dt><%= f.label :name %></dt>
+			<dd><%= f.text_field :name %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :start_date %></dt>
+    	<dd><%= f.date_select :start_date %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :end_date %></dt>
+    	<dd><%= f.date_select :end_date %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :goal %></dt>
+    	<dd><%= f.text_field :goal %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :goal_type %></dt>
+    	<dd><%= f.text_field :goal_type %></dd>
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	</fieldset>
+<% end %>

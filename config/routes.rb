@@ -1,4 +1,21 @@
 CompanyManager::Application.routes.draw do
+
+	resources :activities
+	resources :campaigns
+	resources :campaign_types
+	resources :clients
+	resources :companies
+	resources :departments
+	resources :employees
+	resources :projects
+	resources :sales
+	resources :schedules
+	resources :schedule_blocks
+	resources :todos
+	resources :users
+
+	match 'settings' => 'settings#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,30 @@
+<%= form_for(@schedule_block) do |f| %>
+  <% if @schedule_block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule_block.errors.count, "error") %> prohibited this schedule_block from being saved:</h2>
+
+      <ul>
+      <% @schedule_block.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<fieldset>
+		<legend>Schedule Block Details</legend>
+		
+		<dl>
+    	<dt><%= f.label :order %></dt>
+    	<dd><%= f.text_field :order %></dd>
+		</dl>
+		<dl>
+    	<dt><%= f.label :description %></dt>
+    	<dd><%= f.text_area :description %></dd>
+		</dl>
+	</fieldset>
+		
+	<fieldset>
+    <%= f.submit %>
+	</fieldset>
+<% end %>
