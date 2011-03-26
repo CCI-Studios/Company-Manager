@@ -2,30 +2,29 @@
 <html>
 <head>
 	<title><%= title %></title>
-  	
-	<link rel="stylesheet" href="/css/template.css" type="text/css" />	
+
+	<link rel="stylesheet" href="/css/template.css" type="text/css" />
   	<%= javascript_include_tag :defaults %>
   	<%= csrf_meta_tag %>
+
+	<meta name="viewport" content="width=720,maximum-scale=1.0" />
 </head>
 
-<body class="fluid">
+<body>
 	<div id="wrapper">
-		<%= render 'layouts/header' %>
-		<%= render 'layouts/top_menu' %>
-	
-		<section id="content" class="container_12">
-			<div class="container_12 clearfix">
-				<section id="main" class="grid_9 push_3">
-					<%= yield %>
-				</section>
-
-				<aside id="sidebar" class="grid_3 pull_9">
-					<%= render 'layouts/info' %>
-				</aside>
+		<div id="master"><div>
+			<div class="toolbar">
+				<heading>Company Manager</heading>
 			</div>
-		</section>
-		
-		<%= render 'layouts/footer' %>
+			<%= render 'layouts/menu' %>
+		</div></div>
+
+		<div id="details"><div>
+			<div class="toolbar">
+				<heading>Clients</heading>
+			</div>
+			hello world
+		</div></div>
 	</div>
 </body>
 </html>

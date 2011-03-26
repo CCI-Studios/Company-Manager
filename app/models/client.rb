@@ -24,6 +24,7 @@
 class Client < ActiveRecord::Base
 	attr_accessible :first_name, :last_name, :title, :phone1, :extension1, :phone2, :extension2, :address1, :address2, :city, :province, :country, :postal_code
 	
-	validates :first_name, :presence => true
-	# validates :last_name, :presence => true
+	validates :first_name,	:presence => true
+	validates :last_name,		:presence => true
+	validates :phone1,			:presence => true
 end

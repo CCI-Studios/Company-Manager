@@ -1,12 +1,39 @@
-<ul class="hmenu">
-	<li><a href="./index.html">Dashboard</a></li>
-	<li><%= link_to "Clients", clients_path %></li>
-	<li><%= link_to "Projects", projects_path %></li>
-	<li><%= link_to "Employees", employees_path %></li>
-	<li><%= link_to "Sales", sales_path %></li>
-	<li><%= link_to "Campaigns", campaigns_path %></li>
-	<li><%= link_to "Companies", companies_path %></li>
-	<li><%= link_to "Schedules", schedules_path %></li>
-	<li><%= link_to "Users", users_path %></li>
-	<li><a href="#">Reports</a></li>
-</ul>
+<div class="tableview grouped">
+	<div class="tablegroup">
+		<header>Welcome Jonathan</header>
+		<ul>
+			<li><%= link_to "Inbox", "#" %></li>
+			<li><%= link_to "Todos", todos_path %></li>
+			<li><%= link_to "Profile", settings_path %></li>
+			<li><%= link_to "Logout", "#" %></li>
+		</ul>
+	</div>
+
+	<div class="tablegroup">
+		<header>Contacts</header>
+		<ul>
+			<li><%= link_to "Clients", clients_path %></li>
+			<li><%= link_to "Companies", companies_path %></li>
+			<li><%= link_to "Employees", employees_path %></li>
+			<li><%= link_to "Users", users_path %></li>
+		</ul>
+	</div>
+
+	<div class="tablegroup">
+		<header>Work</header>
+		<ul>
+			<li><%= link_to "Projects", projects_path %></li>
+			<li><%= link_to "Schedules", schedules_path %></li>
+
+		</ul>
+	</div>
+
+	<div class="tablegroup">
+		<header>Sales</header>
+		<ul>
+			<li><%= link_to "Sales", sales_path %></li>
+			<li><%= link_to "Campaigns", campaigns_path %></li>
+			<li><%= link_to "Reports", "#" %></li>
+		</ul>
+	</div>
+</div>
