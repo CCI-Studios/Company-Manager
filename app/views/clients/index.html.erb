@@ -5,23 +5,23 @@
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Phone Number</th>
-				<th>Manager</th>
-		    <th></th>
+				<th width="100">Phone Number</th>
+				<th width="100">Manager</th>
 		  </tr>
 		</thead>
 
 		<tbody>
 		<% @clients.each do |client| %>
 			<tr>
-				<td><%= client.first_name %></td>
+				<td>
+					<%= link_to client.fullname, client %>
+					<small class="hover">
+						<%= link_to 'Edit', edit_client_path(client) %>,
+						<%= link_to 'Delete', client, :confirm => 'Are you sure?', :method => :delete %>
+					</small>
+				</td>
 				<td><%= client.phone1 %></td>
 				<td>&nbsp;</td>
-				<td>
-					<%= link_to 'S', client %>,
-					<%= link_to 'E', edit_client_path(client) %>,
-					<%= link_to 'D', client, :confirm => 'Are you sure?', :method => :delete %>
-				</td>
 			</tr>
 		<% end %>
 		</tbody>
