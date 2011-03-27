@@ -1,12 +1,13 @@
 CompanyManager::Application.routes.draw do
 
-	resources :activities
+  resources :activities
 	resources :campaigns
 	resources :campaign_types
 	resources :clients
 	resources :companies
 	resources :departments
 	resources :employees
+	resources :menus
 	resources :projects
 	resources :sales
 	resources :schedules
@@ -15,6 +16,10 @@ CompanyManager::Application.routes.draw do
 	resources :users
 
 	match 'settings' => 'settings#index'
+	match 'dashboard' => 'dashboard#index'
+	match 'dashboard/people' => 'dashboard#people'
+	match 'dashboard/projects' => 'dashboard#projects'
+	match 'dashboard/reports' => 'dashboard#reports'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

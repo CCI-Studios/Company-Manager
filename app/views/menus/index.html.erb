@@ -1,0 +1,27 @@
+<article>
+	<h1>Listing menus</h1>
+
+	<table class="datalist">
+		<thead>
+		  <tr>
+		    <th width="150">Title</th>
+		    <th>Link</th>
+		  </tr>
+		</thead>
+
+		<tbody><% @menus.each do |menu| %>
+	  	<tr>
+	    	<td>
+					<%= link_to menu.title, menu %>
+					<small class="hover">
+						<%= link_to 'Edit', edit_menu_path(menu) %>
+				    <%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %>
+					</small>
+				</td>
+		    <td><%= link_to menu.link, menu.link %></td>
+	  	</tr>
+		<% end %></tbody>
+	</table>
+
+	<%= link_to 'New Menu', new_menu_path %>
+</article>
