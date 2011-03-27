@@ -23,7 +23,13 @@
 
 class Client < ActiveRecord::Base
 	attr_accessible :first_name, :last_name, :title, :phone1, :extension1, :phone2, :extension2, :email, :address1, :address2, :city, :province, :country, :postal_code
+	default_scope :order => "lower(last_name) ASC, lower(first_name) ASC"
 
 	validates :first_name, :presence => true
-	# validates :last_name, :presence => true
+	validates :last_name, :presence => true
+	validates :phone1, :presence => true
+
+	def fullname
+	  "#{last_name}, #{first_name}"
+  end
 end

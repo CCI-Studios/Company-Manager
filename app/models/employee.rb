@@ -24,4 +24,12 @@
 #
 
 class Employee < ActiveRecord::Base
+
+  default_scope :order => 'lower(last_name) ASC, lower(first_name) ASC'
+
+  has_many :companies
+
+  def fullname
+    "#{last_name}, #{first_name}"
+  end
 end
