@@ -6,21 +6,23 @@
 	  	<tr>
 	    	<th>Name</th>
 	    	<th>Phone</th>
-				<th>Manager</th>
-	    	<th></th>
+			<th>Manager</th>
 	  	</tr>
 		</thead>
 
 		<tbody>
 		<% @companies.each do |company| %>
 			<tr>
-				<td><%= company.name %></td>
-				<td><%= company.phone %></td>
-				<td>&nbsp</td>
 				<td>
-					<%= link_to 'S', company %>,
-					<%= link_to 'E', edit_company_path(company) %>,
-					<%= link_to 'D', company, :confirm => 'Are you sure?', :method => :delete %>
+					<%= link_to company.name, company %>
+					<small class="hover">
+						<%= link_to 'Edit', edit_company_path(company) %>,
+						<%= link_to 'Delete', company, :confirm => 'Are you sure?', :method => :delete %>
+					</small>
+				</td>
+				<td width="100"><%= company.phone %></td>
+				<td width="100">
+					<%= link_to company.manager.fullname, company.manager if company.manager %>
 				</td>
 			</tr>
 		<% end %>

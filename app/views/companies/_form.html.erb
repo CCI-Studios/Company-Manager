@@ -13,15 +13,17 @@
 
 	<fieldset>
 		<legend>Company Information</legend>
-		
+
 		<dl>
 			<dt><%= f.label :name %></dt>
-    	<dd><%= f.text_field :name %></dd>
+    		<dd><%= f.text_field :name %></dd>
 		</dl>
+
 		<dl>
-    	<dt><%= f.label :phone %></dt>
-    	<dd><%= f.text_field :phone %></dd>
+    		<dt><%= f.label :phone %></dt>
+    		<dd><%= f.text_field :phone %></dd>
 		</dl>
+
 		<dl>
     	<dt><%= f.label :address1 %></dt>
     	<dd><%= f.text_field :address1 %></dd>
@@ -46,8 +48,13 @@
     	<dt><%= f.label :postal_code %></dt>
     	<dd><%= f.text_field :postal_code %></dd>
 		</dl>
+
+		<dl>
+			<dt><%= f.label :manager_id %></dt>
+			<dd><%= collection_select(:company, :manager_id, @employees, :id, :fullname, options = { :prompt => "-Select a Manager" }) %></dd>
+		</dl>
 	</fieldset>
-		
+
 	<fieldset>
 	  <div class="actions">
 	    <%= f.submit %>
