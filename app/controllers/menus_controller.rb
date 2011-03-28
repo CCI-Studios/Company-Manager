@@ -25,6 +25,22 @@ class MenusController < ApplicationController
   # GET /menus/new.xml
   def new
     @menu = Menu.new
+    @routes = [
+                { :name => "-Seperator-", :route => "" },
+                { :name => "Activities", :route => activities_path },
+                { :name => "Campaigns", :route => campaigns_path },
+                { :name => "Clients", :route => clients_path },
+                { :name => "Companies", :route => companies_path },
+                { :name => "Dashboard", :route => dashboard_path },
+                { :name => "Departments", :route => departments_path },
+                { :name => "Employees", :route => employees_path },
+                { :name => "Menus", :route => menus_path },
+                { :name => "Projects", :route => projects_path },
+                { :name => "Sales", :route => sales_path },
+                { :name => "Schedules", :route => schedules_path },
+                { :name => "Todos", :route => todos_path },
+                { :name => "Users", :route => users_path },
+              ]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,10 +51,22 @@ class MenusController < ApplicationController
   # GET /menus/1/edit
   def edit
     @menu = Menu.find(params[:id])
-    @routes = {
+    @routes = [
+                { :name => "-Seperator-", :route => "" },
+                { :name => "Activities", :route => activities_path },
+                { :name => "Campaigns", :route => campaigns_path },
                 { :name => "Clients", :route => clients_path },
-                { :name => "Companies", :route => companies_path }
-              }
+                { :name => "Companies", :route => companies_path },
+                { :name => "Dashboard", :route => dashboard_path },
+                { :name => "Departments", :route => departments_path },
+                { :name => "Employees", :route => employees_path },
+                { :name => "Menus", :route => menus_path },
+                { :name => "Projects", :route => projects_path },
+                { :name => "Sales", :route => sales_path },
+                { :name => "Schedules", :route => schedules_path },
+                { :name => "Todos", :route => todos_path },
+                { :name => "Users", :route => users_path },
+              ]
   end
 
   # POST /menus

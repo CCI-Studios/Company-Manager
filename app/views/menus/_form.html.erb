@@ -17,9 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :link %><br />
-		<% @routes.each do |route|
-			puts route
-		end %>
+		<%= select(:menu, :link, @routes.map { |u| [u[:name], u[:route]] })%>
   </div>
   <div class="field">
     <%= f.label :ordering %><br />

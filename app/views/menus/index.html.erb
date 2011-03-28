@@ -9,18 +9,15 @@
 		  </tr>
 		</thead>
 
-		<tbody><% @menus.each do |menu| %>
-	  	<tr>
-	    	<td>
-					<%= link_to menu.title, menu %>
-					<small class="hover">
-						<%= link_to 'Edit', edit_menu_path(menu) %>
-				    <%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %>
-					</small>
-				</td>
-		    <td><%= link_to menu.link, menu.link %></td>
-	  	</tr>
-		<% end %></tbody>
+		<tbody>
+		<% @menus.each do |menu|
+	  	concat raw(draw_table_row(menu))
+
+			menu.children.each do |menu|
+				concat raw draw_table_row menu, 1
+			end
+		end %>
+		</tbody>
 	</table>
 
 	<%= link_to 'New Menu', new_menu_path %>
