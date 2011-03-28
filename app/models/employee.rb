@@ -27,6 +27,12 @@ class Employee < ActiveRecord::Base
 
   default_scope :order => 'lower(last_name) ASC, lower(first_name) ASC'
 
+  scope :department, lambda { |department|
+    joins(:department).
+    where('departments.name = ?', department).
+    group('employees.id')
+  }
+
   has_many :companies
   belongs_to :department
 

@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
   # GET /companies/new.xml
   def new
     @company = Company.new
-    @employees = Employee.all
+    @employees = Employee.department('Sales')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,7 +36,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   def edit
     @company = Company.find(params[:id])
-    @employees = Employee.all
+    @employees = Employee.department('Sales')
   end
 
   # POST /companies
