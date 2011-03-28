@@ -1,0 +1,23 @@
+%article
+	%h1 Listing employees
+
+	%table.datalist
+		%thead
+			%tr
+				%th Name
+				%th{ :width => 100 } Phone number
+				%th{ :width => 100 } Department
+
+		%tbody
+			- @employees.each do |employee|
+				%tr
+					%td
+						= link_to employee.fullname, employee
+						%small.hover
+							= link_to 'Edit', edit_employee_path(employee)
+							= link_to 'Delete', employee, :confirm => 'Are you sure?', :method => :delete
+					%td= employee.phone1
+					%td= employee.department.name
+
+	= link_to 'New Employee', new_employee_path
+

@@ -1,0 +1,70 @@
+%article
+	%p#notice= notice
+
+	%p
+		%b First name:
+		= @employee.first_name
+
+	%p
+		%b Last name:
+		= @employee.last_name
+
+	%p
+		%b Title:
+		= @employee.title
+
+	%p
+		%b Phone1:
+		= @employee.phone1
+
+	%p
+		%b Extension1:
+		= @employee.extension1
+
+	%p
+		%b Phone2:
+		= @employee.phone2
+
+	%p
+		%b Extension2:
+		= @employee.extension2
+
+	%p
+		%b Address1:
+		= @employee.address1
+
+	%p
+		%b Address2:
+		= @employee.address2
+
+	%p
+		%b City:
+		= @employee.city
+
+	%p
+		%b Province:
+		= @employee.province
+
+	%p
+		%b Country:
+		= @employee.country
+
+	%p
+		%b Country:
+		= @employee.country
+
+	%p
+		%b Postal code:
+		= @employee.postal_code
+
+	%p
+		%b Start date:
+		= @employee.start_date
+
+	%p
+		%b End date:
+		= @employee.end_date
+
+	= link_to 'Edit', edit_employee_path(@employee)
+	|
+	= link_to 'Back', employees_path

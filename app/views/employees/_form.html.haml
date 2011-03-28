@@ -1,0 +1,77 @@
+= form_for(@employee) do |f|
+	- if @employee.errors.any?
+		#error_explanation
+			%h2
+				! pluralize(@employee.errors.count, "error") prohibited this employee from being saved:
+
+			%ul
+			- @employee.errors.full_messages.each do |msg|
+				%li= msg
+
+	%fieldset
+		%legend Employee Information
+		%dl
+			%dt= f.label :first_name
+			%dd= f.text_field :first_name
+		%dl
+			%dt= f.label :lastname
+			%dd= f.text_field :last_name
+		%dl
+			%dt= f.label :title
+			%dd= f.text_field :title
+
+	%fieldset
+		%legend Contact Information
+
+		%dl
+			%dt= f.label :phone1
+			%dd= f.text_field :phone1
+		%dl
+			%dt= f.label :extension1
+			%dd= f.text_field :extension1
+		%dl
+			%dt= f.label :phone2
+			%dd= f.text_field :phone2
+		%dl
+			%dt= f.label :extension2
+			%dd= f.text_field :extension2
+
+	%fieldset
+		%legend Address
+
+		%dl
+			%dt= f.label :address1
+			%dd= f.text_field :address1
+		%dl
+			%dt= f.label :address2
+			%dd= f.text_field :address2
+		%dl
+			%dt= f.label :city
+			%dd= f.text_field :city
+		%dl
+			%dt= f.label :province
+			%dd= f.text_field :province
+		%dl
+			%dt= f.label :country
+			%dd= f.text_field :country
+		%dl
+			%dt= f.label :postal_code
+			%dd= f.text_field :postal_code
+
+	%fieldset
+		%legend Employment Details
+
+		%dl
+			%dt= f.label :department_id
+			%dd= collection_select :employee, :department_id, @departments, :id, :name, options = { :prompt => "-Please select primary area of responsibility" }
+
+		%dl
+			%dt= f.label :start_date
+			%dd= f.date_select :start_date
+		%dl
+			%dt= f.label :end_date
+			%dd= f.date_select :end_date
+
+	%fieldset
+		.actions
+			= f.submit

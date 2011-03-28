@@ -1,0 +1,15 @@
+- if (controller_name == 'dashboard' && action_name == 'people' || %w(clients companies employees).include?(controller_name))
+	= render 'layouts/modules/people_menu'
+- elsif (controller_name == 'dashboard' && action_name == 'projects' || %w(activities projects).include?(controller_name))
+	= render 'layouts/modules/projects_menu'
+- elsif (controller_name == 'dashboard' && action_name == 'reports' || %w(campaigns sales schedules).include?(controller_name))
+	= render 'layouts/modules/reports_menu'
+
+%section.module
+	.inner
+		.title Info
+		.body
+			Projects: 3<br/>
+			! Account Manager: #{link_to "Brown, Heather", '#'}<br/>
+			! Next Event: #{link_to "Phone Call", '#'}
+		.footer Generated on Juy 5, 2011 @ 9:13am

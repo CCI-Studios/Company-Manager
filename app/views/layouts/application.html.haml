@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+%html
+	%head
+		%title= title
+
+		- if Rails.env.production?
+			%link{ :rel => 'stylesheet', :href => '/css/template.min.css', :type=> "text/css"}
+		- else
+			%link{ :rel => 'stylesheet', :href => '/css/template.css', :type => "text/css" }
+
+		!= javascript_include_tag :defaults
+		!= csrf_meta_tag
+
+		-# iphone shizzle
+		%meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
+
+	%body.fluid
+		#wrapper
+			= render 'layouts/header'
+			= render 'layouts/top_menu'
+
+			%section#content
+				.container_12.clearfix
+					#main.grid_9.push_3= yield
+					%aside#sidebar.grid_3.pull_9= render 'layouts/info'
+
+			= render 'layouts/footer'

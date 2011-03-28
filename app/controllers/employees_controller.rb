@@ -25,6 +25,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new.xml
   def new
     @employee = Employee.new
+    @departments = Department.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1/edit
   def edit
     @employee = Employee.find(params[:id])
+    @departments = Department.all
   end
 
   # POST /employees

@@ -10,4 +10,7 @@
 #
 
 class Department < ActiveRecord::Base
+  default_scope :order => "name"
+
+  has_many :employees
 end
