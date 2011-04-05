@@ -34,6 +34,7 @@ class Employee < ActiveRecord::Base
   }
 
   has_many :companies
+  has_many :projects
   belongs_to :department
 
   def fullname
