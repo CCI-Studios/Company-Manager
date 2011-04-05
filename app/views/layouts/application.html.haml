@@ -20,8 +20,10 @@
 			= render 'layouts/top_menu'
 
 			%section#content
-				.container_12.clearfix
-					#main.grid_9.push_3= yield
-					%aside#sidebar.grid_3.pull_9= render 'layouts/info'
+				.line
+					%aside#sidebar.unit.size1of4
+						%div= render 'layouts/info'
+					#main.unit.size3of4
+						%div= yield
 
 			= render 'layouts/footer'
