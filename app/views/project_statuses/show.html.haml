@@ -1,0 +1,17 @@
+%article
+	%p#notice= notice
+
+	%p
+		%b Title:
+		= @project_status.title
+
+	%p
+		%b Type:
+		= @project_status.type
+
+	%p
+		%b Ordering:
+		= @project_status.ordering
+
+	%p
+		! #{link_to 'Edit', edit_project_status_path(@project_status)} | #{link_to 'Back', project_statuses_path}

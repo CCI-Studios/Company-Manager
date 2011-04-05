@@ -1,0 +1,21 @@
+%article
+	%h1 Project Statuses
+
+	%table.datalist
+		%thead
+			%tr
+				%th Title
+				%th Type
+				%th Ordering
+
+		%tbody
+			- @project_statuses.each do |project_status|
+				%tr
+					%td= project_status.title
+					%td= project_status.type
+					%td= project_status.ordering
+					%td= link_to 'Show', project_status
+					%td= link_to 'Edit', edit_project_status_path(project_status)
+					%td= link_to 'Destroy', project_status, :confirm => 'Are you sure?', :method => :delete
+
+	= link_to 'New Project status', new_project_status_path

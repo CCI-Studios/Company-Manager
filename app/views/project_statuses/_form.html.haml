@@ -1,0 +1,28 @@
+- form_for(@project_status) do |f|
+	- if @project_status.errors.any?
+		#error_explanation
+			%h2
+				! #{pluralize(@project_status.errors.count, "error")} prohibited this project_status from being saved:
+			%ul
+				- @project_status.errors.full_messages.each do |msg|
+					%li= msg
+
+	%fieldset
+		%legend Project Status Details
+
+		%dl
+			%dt= f.label :title
+			%dd= f.text_field :title
+
+		%dl
+			%dt= f.label :type
+			%dd= f.text_field :type
+
+		%dl
+			%dt= f.label :ordering
+			%dd= f.text_field :ordering
+
+	%fieldset
+		.actions
+			= f.submit
+
