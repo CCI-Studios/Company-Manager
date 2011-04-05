@@ -13,10 +13,15 @@
 
 	<fieldset>
 		<legend>Project Details</legend>
-	
+
 		<dl>
 			<dt><%= f.label :name %></dt>
 			<dd><%= f.text_field :name %></dd>
+		</dl>
+
+		<dl>
+			<dt><%= f.label :manager_id %></dt>
+			<dd><%= collection_select(:project, :manager_id, @managers, :id, :fullname, options = { :prompt => "-Select a project manager"}) %></dd>
 		</dl>
 
 		<dl>
@@ -33,13 +38,13 @@
     	<dt><%= f.label :completion_date %></dt>
     	<dd><%= f.date_select :completion_date %></dd>
 		</dl>
-		
+
 		<dl>
 			<dt><%= f.label :status %></dt>
-   		<dd><%= f.text_field :status %></dd>
+   		<dd><%= collection_select(:project, :status_id, @statuses, :id, :title, options = { :prompt => "- Select the current status" })%></dd>
 		</dl>
 	</fieldset>
-	
+
 	<fieldset>
     <%= f.submit %>
 	</fieldset>

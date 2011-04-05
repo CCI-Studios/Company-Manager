@@ -1,0 +1,59 @@
+%article.clearfix
+	%h1
+		= @project.name
+		%div.actions
+			%div= link_to 'Edit', edit_project_path(@project)
+			%div= link_to 'Back', projects_path
+
+	- if notice
+		%div#notice= notice
+
+	%fieldset
+		%legend Project Details
+
+		.unit.size1of2
+			%p
+				= "Due: #{@project.due_date}"
+
+		.unit.size1of2.lastunit
+			- if @project.status
+				%p
+					! Status: #{@project.status.title}
+
+		.unit.size1of2
+			- if @project.manager
+				%p
+					! Managed by: #{link_to @project.manager.fullname, @project.manager }
+
+	.line
+		.unit.size2of3
+			%section.module.subtle
+				.inner
+					.title Notes
+					.body
+						= render 'project_notes/widget'
+					.footer
+						= link_to "More...", projects_path
+			%section.module.subtle
+				.inner
+					.title still add
+					.body
+						%ul
+							%li stuff
+							%li key dates - milestones
+					.footer
+		.unit.size1of3.lastunit
+			%section.module.subtle
+				.inner
+					.title Tasks
+					.body
+						= render 'activities/widget'
+					.footer
+						= link_to "More...", activities_path
+
+			%section.module.subtle
+				.inner
+					.title Time Distribution
+					.body
+						<img src="http://chart.apis.google.com/chart?chs=197x150&cht=p3&chco=299900&chd=s:GJRH&chdl=Sales|Design|Development|Finalization&chts=676767,12" alt="Time Distubution" />
+					.footer

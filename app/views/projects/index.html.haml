@@ -1,0 +1,20 @@
+%article
+	%h1 Listing projects
+
+	%table.datalist
+		%thead
+			%tr
+				%th Name
+				%th{ :width => 100 } Status
+
+		%tbody
+			- @projects.each do |project|
+				%tr
+					%td
+						= link_to project.name, project
+						%small.hover
+							= link_to 'Edit', edit_project_path(project)
+							= link_to 'Delete', project, :confirm => 'Are you sure?', :method => :delete
+					%td= project.status
+
+	= link_to 'New Project', new_project_path
