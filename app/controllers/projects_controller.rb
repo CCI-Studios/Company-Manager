@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new.xml
   def new
     @project = Project.new
+    @managers = Employee.department "Sales"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
+    @managers = Employee.department "Sales"
   end
 
   # POST /projects

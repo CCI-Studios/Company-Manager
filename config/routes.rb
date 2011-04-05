@@ -8,6 +8,7 @@ CompanyManager::Application.routes.draw do
 	resources :departments
 	resources :employees
 	resources :menus
+	resources :project_statuses
 	resources :projects
 	resources :sales
 	resources :schedules
