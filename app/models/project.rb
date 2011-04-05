@@ -20,4 +20,9 @@ class Project < ActiveRecord::Base
 
   belongs_to :manager, :class_name => 'Employee'
   #belongs_to :status
+
+  def to_param
+    "#{id}-#{name.gsub(/[^a-z0-9]+/i, '-')}"
+  end
+
 end

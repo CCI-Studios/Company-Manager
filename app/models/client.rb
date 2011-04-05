@@ -32,4 +32,8 @@ class Client < ActiveRecord::Base
 	def fullname
 	  "#{last_name}, #{first_name}"
   end
+
+  def to_param
+    "#{id}-#{fullname.gsub(/[^a-z0-9]+/i, '-')}"
+  end
 end
