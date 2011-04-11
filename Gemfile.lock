@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/binarylogic/authlogic.git
+  revision: 66ed79515919fe13016911b10ebe734cf8718dc7
+  specs:
+    authlogic (2.1.6)
+      activesupport
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -28,7 +35,8 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
-    arel (2.0.8)
+    annotate (2.4.0)
+    arel (2.0.9)
     autotest (4.3.2)
     autotest-fsevent (0.2.2)
       autotest (>= 4.2.4)
@@ -50,8 +58,8 @@ GEM
     mime-types (1.16)
     nokogiri (1.4.4)
     polyglot (0.3.1)
-    rack (1.2.1)
-    rack-mount (0.6.13)
+    rack (1.2.2)
+    rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
@@ -63,6 +71,8 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
+    rails3-generators (0.17.4)
+      railties (>= 3.0.0)
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -84,7 +94,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.24)
+    tzinfo (0.3.26)
     webrat (0.7.1)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
@@ -94,12 +104,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  authlogic!
   autotest (= 4.3.2)
   autotest-fsevent (= 0.2.2)
   autotest-growl (= 0.2.4)
   autotest-rails-pure (= 4.1.0)
   haml
   rails (= 3.0.3)
+  rails3-generators
   rspec (= 2.1.0)
   rspec-rails (= 2.1.0)
   sqlite3-ruby (= 1.2.5)

@@ -4,4 +4,4 @@
 		.unit.size1of3.text-center
 			.msg Timesheet for June 16, 2011 is past due: <a href="#">Fix Now</a>
 		.unit.size1of3.lastunit.text-right
-			Welcome Jonathan
+			= "Welcome #{current_user.username}" if current_user

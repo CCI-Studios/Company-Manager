@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :require_user
+
   # GET /projects
   # GET /projects.xml
   def index
@@ -26,6 +28,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @managers = Employee.department "Sales"
+    @statuses = Status.group 2
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +40,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     @managers = Employee.department "Sales"
+    @statuses = Status.group 2
   end
 
   # POST /projects

@@ -15,12 +15,16 @@ CompanyManager::Application.routes.draw do
 	resources :schedule_blocks
 	resources :todos
 	resources :users
+	resources :user_sessions
 
 	match 'settings' => 'settings#index'
 	match 'dashboard' => 'dashboard#index'
 	match 'dashboard/people' => 'dashboard#people'
 	match 'dashboard/projects' => 'dashboard#projects'
 	match 'dashboard/reports' => 'dashboard#reports'
+
+	match 'login' => 'user_sessions#new', :as => 'login'
+	match 'logout' => 'user_sessions#destroy', :as => 'logout'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

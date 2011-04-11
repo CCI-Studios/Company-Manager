@@ -1,0 +1,20 @@
+%article
+	%h1 Users
+
+	%table.datalist
+		%thead
+			%tr
+				%th Username
+				%th Email
+
+		%tbody
+			- @users.each do |user|
+				%tr
+					%td
+						= user.username
+						%small.hover
+							= link_to "Edit", edit_user_path(user)
+							= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+					%td= user.email
+
+	= link_to 'New User', new_user_path

@@ -1,5 +1,5 @@
 module ApplicationHelper
-	
+
 	def title
 		base_title = "Company Manager"
 		if @title.nil?
@@ -8,4 +8,6 @@ module ApplicationHelper
 			"#{@title} | #{base_title}"
 		end
 	end
+
+
 end

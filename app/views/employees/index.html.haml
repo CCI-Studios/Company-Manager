@@ -17,7 +17,7 @@
 							= link_to 'Edit', edit_employee_path(employee)
 							= link_to 'Delete', employee, :confirm => 'Are you sure?', :method => :delete
 					%td= employee.phone1
-					%td= employee.department.name
+					%td= employee.department.name if employee.department
 
 	= link_to 'New Employee', new_employee_path
 

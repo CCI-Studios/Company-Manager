@@ -1,6 +1,8 @@
 %ul.hmenu
-	%li= link_to "Dashboard", '/dashboard'
-	%li= link_to "People", "/dashboard/people"
-	%li= link_to "Projects", "/dashboard/projects"
-	%li= link_to "Reports", "/dashboard/reports"
-
+	- if current_user
+		%li= link_to "Dashboard", '/dashboard'
+		%li= link_to "People", "/dashboard/people"
+		%li= link_to "Projects", "/dashboard/projects"
+		%li= link_to "Reports", "/dashboard/reports"
+	- else
+		%li CM.com, your one step productivity shop

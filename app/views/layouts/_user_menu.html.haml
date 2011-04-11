@@ -1,5 +1,9 @@
 %ul.hmenu
-	%li= link_to "Inbox", "#"
-	%li= link_to "Todos", todos_path
-	%li= link_to "Settings", settings_path
-	%li= link_to "Logout", "#"
+	- if current_user
+		%li= link_to "Inbox", "#"
+		%li= link_to "Todos", todos_path
+		%li= link_to "Settings", settings_path
+		%li= link_to "Logout", :logout
+	- else
+		%li= link_to "Register", new_user_path
+		%li= link_to "Login", :login
